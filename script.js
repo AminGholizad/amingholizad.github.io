@@ -56,12 +56,18 @@ document.addEventListener("DOMContentLoaded", () => {
   // Dynamically generate nav links
   const navUl = document.querySelector("nav ul");
   const sections = document.querySelectorAll("section[id]");
+  const iconMap = {
+    "employment-history": "fa-solid fa-briefcase",
+    "additional-skills": "fa-solid fa-tools",
+    education: "fa-solid fa-graduation-cap",
+    publications: "fa-solid fa-book",
+  };
 
   // Add Home link
   const homeLi = document.createElement("li");
   const homeLinkElement = document.createElement("a");
   homeLinkElement.href = "#top";
-  homeLinkElement.textContent = "Home";
+  homeLinkElement.innerHTML = '<i class="fas fa-home"></i> Home';
   homeLi.appendChild(homeLinkElement);
   navUl.appendChild(homeLi);
 
@@ -71,11 +77,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const sectionTitle =
       section.querySelector("h2.section-title")?.textContent ||
       sectionId.replace(/-/g, " ").replace(/\b\w/g, (l) => l.toUpperCase());
+    const iconClass = iconMap[sectionId];
 
     const li = document.createElement("li");
     const a = document.createElement("a");
     a.href = `#${sectionId}`;
-    a.textContent = sectionTitle;
+    a.innerHTML = iconClass
+      ? `<i class="${iconClass}"></i> ${sectionTitle}`
+      : sectionTitle;
     li.appendChild(a);
     navUl.appendChild(li);
   });
@@ -85,9 +94,22 @@ document.addEventListener("DOMContentLoaded", () => {
   const homeLink = document.querySelector('nav a[href="#top"]');
   const header = document.querySelector("header");
 
+  // Set scroll-padding-top dynamically based on header height
+  const setScrollPadding = () => {
+    const headerHeight = header.offsetHeight;
+    document.documentElement.style.setProperty(
+      "--scroll-padding-top",
+      `${headerHeight + 20}px`,
+    ); // Add a small buffer
+  };
+
+  // Initial set and on resize
+  setScrollPadding();
+  window.addEventListener("resize", setScrollPadding);
+
   const scrollSpy = () => {
     const headerHeight = header.offsetHeight;
-    const scrollOffset = headerHeight + 30; // Add a buffer to the header height
+    const scrollOffset = headerHeight + 25; // Use the same buffer as scroll-padding-top
     let currentSectionId = "";
 
     sections.forEach((section) => {

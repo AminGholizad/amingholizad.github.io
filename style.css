@@ -26,7 +26,7 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 300px; /* Adjust this value based on your header's height */
+    scroll-padding-top: var(--scroll-padding-top);
 }
 
 body {
@@ -36,7 +36,9 @@ body {
     padding: 0;
     background-color: var(--background-color);
     color: var(--text-color);
-    transition: background-color 0.3s, color 0.3s;
+    transition:
+        background-color 0.3s,
+        color 0.3s;
 }
 
 .container {
@@ -46,7 +48,9 @@ body {
     background-color: var(--container-bg-color);
     border-radius: 5px;
     box-shadow: var(--container-shadow);
-    transition: background-color 0.3s, box-shadow 0.3s;
+    transition:
+        background-color 0.3s,
+        box-shadow 0.3s;
 }
 
 header {
@@ -59,7 +63,9 @@ header {
     color: var(--header-text-color);
     padding: 10px;
     border-radius: 5px;
-    transition: background-color 0.3s, color 0.3s;
+    transition:
+        background-color 0.3s,
+        color 0.3s;
 }
 
 header h1 {
@@ -108,6 +114,10 @@ nav ul li a {
 header nav ul li a.active {
     font-weight: bold;
     text-decoration: underline;
+}
+
+nav ul li a i {
+    margin-right: 8px;
 }
 
 .section {
@@ -206,4 +216,48 @@ header nav ul li a.active {
 
 .entry .title {
     font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: var(--header-bg-color);
+    color: var(--header-text-color);
+    border-radius: 5px;
+    transition:
+        background-color 0.3s,
+        color 0.3s;
+    position: sticky;
+    bottom: 0;
+    z-index: 1;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    align-items: center;
+}
+
+.footer-item {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    font-size: 0.9em; /* Smaller font size */
+}
+
+.footer-item i {
+    margin-right: 5px;
+    color: var(--link-color);
+}
+
+.footer-item a {
+    text-decoration: none;
+    color: var(--link-color);
+}
+
+.section-title i {
+    margin-right: 10px;
 }
