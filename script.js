@@ -40,8 +40,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Generate stars for skill gauges
   const skillGauges = document.querySelectorAll(".skill-gauge");
+  const ratingMap = {
+    1: "Novice",
+    2: "Competent",
+    3: "Proficient",
+    4: "Advanced",
+    5: "Expert",
+  };
+
   skillGauges.forEach((gauge) => {
     const rating = parseInt(gauge.dataset.rating, 10);
+    gauge.title = ratingMap[rating] || ""; // Set the tooltip text
     let stars = "";
     for (let i = 0; i < 5; i++) {
       if (i < rating) {
