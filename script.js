@@ -98,32 +98,17 @@ document.addEventListener("DOMContentLoaded", () => {
     navUl.appendChild(li);
   });
 
-  // Highlight active section in nav bar on scroll
   const navLinks = document.querySelectorAll("nav a");
   const homeLink = document.querySelector('nav a[href="#top"]');
-  const header = document.querySelector("header");
 
-  // Set scroll-padding-top dynamically based on header height
-  const setScrollPadding = () => {
-    const headerHeight = header.offsetHeight;
-    document.documentElement.style.setProperty(
-      "--scroll-padding-top",
-      `${headerHeight + 20}px`,
-    ); // Add a small buffer
-  };
 
-  // Initial set and on resize
-  setScrollPadding();
-  window.addEventListener("resize", setScrollPadding);
 
   const scrollSpy = () => {
-    const headerHeight = header.offsetHeight;
-    const scrollOffset = headerHeight + 25; // Use the same buffer as scroll-padding-top
     let currentSectionId = "";
 
     sections.forEach((section) => {
       const sectionTop = section.offsetTop;
-      if (window.scrollY >= sectionTop - scrollOffset) {
+      if (window.scrollY >= sectionTop - 50) {
         currentSectionId = section.getAttribute("id");
       }
     });
@@ -146,8 +131,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  // Initial call
   scrollSpy();
-
   window.addEventListener("scroll", scrollSpy);
 });
