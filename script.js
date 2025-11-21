@@ -70,15 +70,10 @@ document.addEventListener("DOMContentLoaded", () => {
     "additional-skills": "fa-solid fa-tools",
     education: "fa-solid fa-graduation-cap",
     publications: "fa-solid fa-book",
+    summary: "fa-solid fa-user", // Added icon for summary
   };
 
-  // Add Home link
-  const homeLi = document.createElement("li");
-  const homeLinkElement = document.createElement("a");
-  homeLinkElement.href = "#top";
-  homeLinkElement.innerHTML = '<i class="fas fa-home"></i> Home';
-  homeLi.appendChild(homeLinkElement);
-  navUl.appendChild(homeLi);
+
 
   // Add links for each section
   sections.forEach((section) => {
@@ -99,7 +94,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   const navLinks = document.querySelectorAll("nav a");
-  const homeLink = document.querySelector('nav a[href="#top"]');
 
 
 
@@ -123,10 +117,6 @@ document.addEventListener("DOMContentLoaded", () => {
       );
       if (activeLink) {
         activeLink.classList.add("active");
-      }
-    } else {
-      if (homeLink) {
-        homeLink.classList.add("active");
       }
     }
   };
