@@ -9,11 +9,11 @@ document.addEventListener("DOMContentLoaded", () => {
     htmlElement.setAttribute("data-theme", theme);
     localStorage.setItem("theme", theme);
     if (theme === "dark") {
-      sunIcon.style.display = "none";
-      moonIcon.style.display = "inline-block";
+      sunIcon.classList.add("active");
+      moonIcon.classList.remove("active");
     } else {
-      sunIcon.style.display = "inline-block";
-      moonIcon.style.display = "none";
+      sunIcon.classList.remove("active");
+      moonIcon.classList.add("active");
     }
   };
 
@@ -104,8 +104,6 @@ document.addEventListener("DOMContentLoaded", () => {
     summary: "fa-solid fa-user", // Added icon for summary
   };
 
-
-
   // Add links for each section
   sections.forEach((section) => {
     const sectionId = section.getAttribute("id");
@@ -125,8 +123,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   const navLinks = document.querySelectorAll("nav a");
-
-
 
   const scrollSpy = () => {
     let currentSectionId = "";
