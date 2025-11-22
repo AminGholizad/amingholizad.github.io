@@ -180,10 +180,21 @@ nav ul li a i {
     padding: 5px;
 }
 
-#theme-toggle svg {
-    width: 24px;
-    height: 24px;
-    stroke: var(--text-color);
+.sun-icon,
+.moon-icon {
+    display: inline-block;
+}
+
+.sun-icon i,
+.moon-icon i {
+    display: none;
+    font-size: 24px;
+    color: var(--text-color);
+}
+
+.sun-icon.active i,
+.moon-icon.active i {
+    display: inline-block;
 }
 
 .title-container {
@@ -319,26 +330,20 @@ footer {
 
 
 
+
+
+
+
+
+
 .header-sidebar.collapsed .location-text {
     display: none;
 }
 
-.header-sidebar.collapsed .footer-item i {
+.header-sidebar.collapsed .footer-item > span i {
     display: block;
     font-size: 1.5em;
     margin: 0 auto;
-}
-
-
-
-
-
-.header-sidebar.collapsed .footer-item a {
-
-    display: block;
-
-    text-align: center;
-
 }
 
 
