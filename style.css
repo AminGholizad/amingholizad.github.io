@@ -48,6 +48,7 @@ main {
     flex-direction: column;
     flex-grow: 1;
     margin-left: 250px;
+    transition: margin-left 0.5s ease;
 }
 
 .container {
@@ -110,7 +111,7 @@ nav ul li a {
 
 header nav ul li a.active {
     font-weight: bold;
-    text-decoration: underline;
+    border-bottom: 2px solid;
 }
 
 nav ul li a i {
@@ -167,6 +168,8 @@ nav ul li a i {
     color: var(--skill-bg-color);
 }
 
+
+
 #theme-toggle {
     position: absolute;
     top: 10px;
@@ -188,6 +191,7 @@ nav ul li a i {
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    padding-top: 50px;
 }
 
 .profile-photo {
@@ -247,13 +251,150 @@ footer {
 }
 
 .footer-item i {
-    margin-right: 5px;
+    margin-right: 8px;
     color: var(--link-color);
 }
 
 .footer-item a {
     text-decoration: none;
     color: var(--link-color);
+}
+
+#sidebar-toggle {
+    display: block;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 1001;
+}
+
+#sidebar-toggle i {
+    font-size: 24px;
+    color: var(--text-color);
+}
+
+.header-sidebar.collapsed #sidebar-toggle {
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
+.header-sidebar.collapsed {
+
+    width: 60px;
+
+}
+
+
+
+.header-sidebar.collapsed .title-container h1,
+
+.header-sidebar.collapsed nav ul li a span,
+
+.header-sidebar.collapsed .footer-item a span,
+
+.header-sidebar.collapsed #theme-toggle {
+
+    display: none;
+
+}
+
+
+
+.header-sidebar.collapsed .profile-photo {
+
+    display: block;
+
+    width: 40px;
+
+    height: 40px;
+
+    margin: 10px auto;
+
+}
+
+
+
+.header-sidebar.collapsed .location-text {
+    display: none;
+}
+
+.header-sidebar.collapsed .footer-item i {
+    display: block;
+    font-size: 1.5em;
+    margin: 0 auto;
+}
+
+
+
+
+
+.header-sidebar.collapsed .footer-item a {
+
+    display: block;
+
+    text-align: center;
+
+}
+
+
+
+.header-sidebar.collapsed nav ul li a {
+
+    display: block;
+
+}
+
+
+
+.header-sidebar.collapsed nav ul li a i {
+
+    font-size: 1.5em;
+
+    margin: 0 auto;
+
+}
+
+
+
+.header-sidebar.collapsed .footer-content {
+
+    flex-direction: column;
+
+    align-items: center;
+
+}
+
+
+
+.header-sidebar.collapsed .footer-item {
+
+    justify-content: center;
+
+}
+
+
+
+
+
+.header-sidebar.collapsed .footer-item a i {
+
+    font-size: 1.5em;
+
+    margin: 0 auto;
+
+}
+
+
+
+main.collapsed {
+
+    margin-left: 60px;
+
 }
 
 .section-title i {

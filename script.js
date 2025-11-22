@@ -62,6 +62,37 @@ document.addEventListener("DOMContentLoaded", () => {
     gauge.innerHTML = stars;
   });
 
+  const sidebarToggle = document.getElementById("sidebar-toggle");
+  const headerSidebar = document.querySelector(".header-sidebar");
+  const main = document.querySelector("main");
+
+  // Function to set the sidebar state
+  const setSidebarState = (collapsed) => {
+    if (collapsed) {
+      headerSidebar.classList.add("collapsed");
+      main.classList.add("collapsed");
+      localStorage.setItem("sidebarCollapsed", "true");
+    } else {
+      headerSidebar.classList.remove("collapsed");
+      main.classList.remove("collapsed");
+      localStorage.setItem("sidebarCollapsed", "false");
+    }
+  };
+
+  // Check for saved sidebar state on load
+  const savedSidebarCollapsed = localStorage.getItem("sidebarCollapsed");
+  if (savedSidebarCollapsed === "true") {
+    setSidebarState(true);
+  } else {
+    setSidebarState(false);
+  }
+
+  // Toggle sidebar on button click
+  sidebarToggle.addEventListener("click", () => {
+    const isCollapsed = headerSidebar.classList.contains("collapsed");
+    setSidebarState(!isCollapsed);
+  });
+
   // Dynamically generate nav links
   const navUl = document.querySelector("nav ul");
   const sections = document.querySelectorAll("section[id]");
@@ -87,8 +118,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const a = document.createElement("a");
     a.href = `#${sectionId}`;
     a.innerHTML = iconClass
-      ? `<i class="${iconClass}"></i> ${sectionTitle}`
-      : sectionTitle;
+      ? `<i class="${iconClass}"></i> <span>${sectionTitle}</span>`
+      : `<span>${sectionTitle}</span>`;
     li.appendChild(a);
     navUl.appendChild(li);
   });
