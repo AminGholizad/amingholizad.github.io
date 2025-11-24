@@ -111,7 +111,7 @@ header nav ul li a.active {
     border-bottom: 2px solid;
 }
 
-nav ul li a i {
+nav ul li a .icon {
     margin-right: 8px;
 }
 
@@ -166,8 +166,6 @@ nav ul li a i {
     color: var(--skill-bg-color);
 }
 
-
-
 #theme-toggle {
     position: absolute;
     top: 10px;
@@ -183,15 +181,15 @@ nav ul li a i {
     display: inline-block;
 }
 
-.sun-icon i,
-.moon-icon i {
+.sun-icon .icon,
+.moon-icon .icon {
     display: none;
     font-size: 24px;
     color: var(--text-color);
 }
 
-.sun-icon.active i,
-.moon-icon.active i {
+.sun-icon.active .icon,
+.moon-icon.active .icon {
     display: inline-block;
 }
 
@@ -259,7 +257,7 @@ footer {
     font-size: 0.9em; /* Smaller font size */
 }
 
-.footer-item i {
+.footer-item .icon {
     margin-right: 8px;
     color: var(--link-color);
 }
@@ -281,7 +279,7 @@ footer {
     z-index: 1001;
 }
 
-#sidebar-toggle i {
+#sidebar-toggle .icon {
     font-size: 24px;
     color: var(--text-color);
 }
@@ -293,29 +291,17 @@ footer {
 }
 
 .header-sidebar.collapsed {
-
     width: 60px;
-
 }
-
-
 
 .header-sidebar.collapsed .title-container h1,
-
-.header-sidebar.collapsed nav ul li a span,
-
-.header-sidebar.collapsed .footer-item a span,
-
+.header-sidebar.collapsed nav ul li a span:not(.icon),
+.header-sidebar.collapsed .footer-item a span:not(.icon),
 .header-sidebar.collapsed #theme-toggle {
-
     display: none;
-
 }
 
-
-
 .header-sidebar.collapsed .profile-photo {
-
     display: block;
 
     width: 40px;
@@ -323,83 +309,48 @@ footer {
     height: 40px;
 
     margin: 10px auto;
-
 }
-
-
-
-
-
-
-
-
 
 .header-sidebar.collapsed .location-text {
     display: none;
 }
 
-.header-sidebar.collapsed .footer-item > span i {
+.header-sidebar.collapsed .footer-item > span .icon {
     display: block;
     font-size: 1.5em;
     margin: 0 auto;
 }
-
-
 
 .header-sidebar.collapsed nav ul li a {
-
     display: block;
-
 }
 
-
-
-.header-sidebar.collapsed nav ul li a i {
-
+.header-sidebar.collapsed nav ul li a .icon {
     font-size: 1.5em;
 
     margin: 0 auto;
-
 }
 
-
-
 .header-sidebar.collapsed .footer-content {
-
     flex-direction: column;
 
     align-items: center;
-
 }
-
-
 
 .header-sidebar.collapsed .footer-item {
-
     justify-content: center;
-
 }
 
-
-
-
-
-.header-sidebar.collapsed .footer-item a i {
-
+.header-sidebar.collapsed .footer-item a .icon {
     font-size: 1.5em;
 
     margin: 0 auto;
-
 }
-
-
 
 main.collapsed {
-
     margin-left: 60px;
-
 }
 
-.section-title i {
+.section-title .icon {
     margin-right: 10px;
 }

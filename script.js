@@ -97,11 +97,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const navUl = document.querySelector("nav ul");
   const sections = document.querySelectorAll("section[id]");
   const iconMap = {
-    "employment-history": "fa-solid fa-briefcase",
-    "additional-skills": "fa-solid fa-tools",
-    education: "fa-solid fa-graduation-cap",
-    publications: "fa-solid fa-book",
-    summary: "fa-solid fa-user", // Added icon for summary
+    "employment-history": "fa-solid fa-briefcase icon",
+    "additional-skills": "fa-solid fa-tools icon",
+    education: "fa-solid fa-graduation-cap icon",
+    publications: "fa-solid fa-book icon",
+    summary: "fa-solid fa-user icon", // Added icon for summary
   };
 
   // Add links for each section
@@ -116,7 +116,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const a = document.createElement("a");
     a.href = `#${sectionId}`;
     a.innerHTML = iconClass
-      ? `<i class="${iconClass}"></i> <span>${sectionTitle}</span>`
+      ? `<span class="${iconClass}"></span> <span>${sectionTitle}</span>`
       : `<span>${sectionTitle}</span>`;
     li.appendChild(a);
     navUl.appendChild(li);
