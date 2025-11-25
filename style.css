@@ -9,6 +9,7 @@
     --skill-text-color: #fff;
     --container-bg-color: #fff;
     --container-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    --entry-date-color: #888;
 }
 
 [data-theme="dark"] {
@@ -22,6 +23,7 @@
     --skill-text-color: #333;
     --container-bg-color: #222;
     --container-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+    --entry-date-color: #bbb;
 }
 
 html {
@@ -216,12 +218,8 @@ nav ul li a .icon {
 
 .entry .date {
     font-weight: normal;
-    color: #888;
+    color: var(--entry-date-color);
     font-size: 0.9em;
-}
-
-[data-theme="dark"] .entry .date {
-    color: #bbb;
 }
 
 .entry .title {

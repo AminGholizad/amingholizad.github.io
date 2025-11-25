@@ -116,7 +116,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const a = document.createElement("a");
     a.href = `#${sectionId}`;
     a.innerHTML = iconClass
-      ? `<span class="${iconClass}"></span> <span>${sectionTitle}</span>`
+      ? `<span class="${iconClass}" aria-hidden="true"></span> <span>${sectionTitle}</span>`
       : `<span>${sectionTitle}</span>`;
     li.appendChild(a);
     navUl.appendChild(li);
